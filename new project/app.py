@@ -11,10 +11,11 @@ RESULT_FOLDER = 'results'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(RESULT_FOLDER, exist_ok=True)
 
+app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html')  # Assure-toi que ce nom est exact
 
 @app.route('/get_sheets', methods=['POST'])
 def get_sheets():
